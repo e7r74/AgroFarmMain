@@ -1,0 +1,395 @@
+/* src/components/SolutionsInfographic/SolutionsInfographic.module.css */
+
+.infographicSection {
+  background-image: url('../../../public/image.png');
+  background-color: #81c78433;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 80px 0;
+  text-align: center;
+  overflow: hidden; /* Важно для анимаций */
+
+  /* Изначальное состояние для анимации появления всей секции */
+  opacity: 0;
+  transform: translateY(50px); /* Начинаем чуть ниже */
+  transition: opacity 1s ease-out, transform 1s ease-out; /* Плавный переход при появлении */
+}
+
+/* Класс, который добавляется при входе секции в область видимости */
+.infographicSection.animatedIn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* -------------------- АНИМАЦИИ ВНУТРИ СЕКЦИИ -------------------- */
+/* Keyframes для появления заголовка и центрального круга (могут быть и другие) */
+@keyframes fadeInTitle {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* -------------------- MAIN TITLE -------------------- */
+.mainTitle {
+  font-size: 2.5em;
+  font-weight: 700;
+  color: #0b1a2b;
+  margin-bottom: 20px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.3;
+
+  /* Анимация заголовка при появлении секции */
+  opacity: 0; /* Изначально скрыт */
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Плавный переход */
+}
+
+/* Когда секция анимирована, анимируем заголовок */
+.infographicSection.animatedIn .mainTitle {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s; /* Задержка для заголовка */
+}
+
+/* -------------------- INFOGRAPHIC CONTAINER -------------------- */
+.infographicContainer {
+  position: relative;
+  width: 800px;
+  height: 800px;
+  max-width: 90vw;
+  max-height: 90vw;
+
+  margin-left: -150px;
+  margin-right: auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Анимация контейнера инфографики (или просто его появление, если элементы анимируются по отдельности) */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.infographicSection.animatedIn .infographicContainer {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.4s; /* Задержка для основного контейнера инфографики */
+}
+
+/* --- Медиа-запросы для infographicContainer --- */
+@media (max-width: 1200px) {
+  .infographicContainer {
+    width: 600px;
+    height: 600px;
+    margin-left: -100px; /* Уменьшаем отступ */
+  }
+}
+
+@media (max-width: 900px) {
+  .infographicContainer {
+    width: 500px;
+    height: 500px;
+    margin-left: -50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .infographicContainer {
+    width: 90vw; /* Делаем шире на мобильных, чтобы было лучше видно */
+    height: 90vw;
+    margin-left: 0; /* Центрируем на мобильных */
+    margin-right: auto;
+    align-self: center; /* Центрируем внутри flex-контейнера section */
+  }
+}
+
+/* --- Центральный круг --- */
+.centerCircle {
+  position: absolute;
+  width: 30%;
+  height: 30%;
+  border-radius: 50%;
+  background-color: #ffffff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
+
+  /* Анимация центрального круга */
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.infographicSection.animatedIn .centerCircle {
+  opacity: 1;
+  transform: scale(1);
+  transition-delay: 0.6s; /* Задержка для центрального круга */
+}
+
+
+.centerImageWrapper {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.centerImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Убрал стили для .centerLabelMain, .centerLabelSub и .centerInfoMain,
+   так как они были закомментированы в JSX */
+
+
+/* --- Внешние элементы (круги) --- */
+.itemWrapper {
+  position: absolute;
+  width: 17%;
+  height: 17%;
+  border-radius: 50%;
+  background-color: #ffffff;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  border: 3px solid transparent;
+
+  /* Анимация для каждого внешнего элемента */
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.5); /* Начинаем скрытыми и уменьшенными */
+}
+
+/* Когда секция анимирована, анимируем каждый itemWrapper */
+.infographicSection.animatedIn .itemWrapper {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1); /* Возвращаем к нормальному размеру */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Плавный переход */
+  transition-delay: var(--item-delay); /* Используем CSS-переменную для задержки */
+}
+
+.itemWrapper.itemHovered {
+  transform: translate(-50%, -50%) scale(1.05); /* Увеличиваем при наведении */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  border-color: #a4ce38;
+}
+
+.itemLink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.itemIconCircle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #e6f7df;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.itemWrapper.itemHovered .itemIconCircle {
+  background-color: #a4ce38;
+}
+
+.itemIcon {
+  font-size: 2.2em;
+  color: #023f23;
+  transition: color 0.3s ease;
+}
+
+.itemWrapper.itemHovered .itemIcon {
+  color: #ffffff;
+}
+
+.itemName {
+  font-size: 1em;
+  font-weight: 600;
+  color: #0b1a2b;
+  margin-top: 5px;
+  transition: color 0.3s ease;
+}
+
+.itemWrapper.itemHovered .itemName {
+  color: #007bff;
+}
+
+/* GLOBAL TOOLTIP - Rendered outside the map function */
+.globalItemDescription {
+    white-space: pre-line;
+  position: absolute;
+  left: calc(100% + 150px); /* 100% of infographicContainer width + 150px offset */
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 400px;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  font-size: 1.05em;
+  color: #34495e;
+  z-index: 100;
+  pointer-events: none; /* Allows clicks to pass through if not active */
+
+  /* Initial state: completely hidden and slightly offset */
+  opacity: 0;
+  visibility: hidden; /* Ensures it doesn't take up space or interfere */
+  transform: translateY(-50%) translateY(20px); /* Starts slightly below for fade-in effect */
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+/* Скрываем tooltip по умолчанию, его видимость контролируется React */
+/* Но если React его рендерит (т.е., activeItemData есть), то он должен быть виден */
+
+
+/* Адаптивность для tooltips */
+@media (max-width: 1200px) {
+  .globalItemDescription {
+    left: calc(100% + 50px); /* Уменьшаем отступ */
+    width: 250px;
+  }
+}
+
+@media (max-width: 900px) {
+  .globalItemDescription {
+    left: calc(100% + 20px);
+    width: 200px;
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 768px) {
+  .globalItemDescription {
+    /* На мобильных можно разместить его сверху или снизу от инфографики,
+       или сделать его полноэкранным модальным окном */
+    position: relative; /* Относительное позиционирование */
+    top: auto;
+    left: 0;
+    transform: none;
+    margin: 20px auto; /* Центрируем по горизонтали, отступ сверху */
+    width: 90%; /* Ширина почти всего экрана */
+    font-size: 0.9em;
+    padding: 10px;
+    box-shadow: none; /* Убираем тень, если нужно */
+    border: 1px solid #eee; /* Добавляем границу, если нужно */
+  }
+}
+
+
+/* --- SVG Линии --- */
+.linesSvg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.line {
+  stroke: #cccccc;
+  stroke-width: 1;
+  stroke-dasharray: 5 5;
+  transition: stroke 0.3s ease, stroke-width 0.3s ease;
+}
+
+.activeLine {
+  stroke: #023f23;
+  stroke-width: 2;
+  stroke-dasharray: 0;
+  transition: stroke 0.3s ease, stroke-width 0.3s ease, stroke-dasharray 0.3s ease;
+}
+
+/* Адаптивность для элементов */
+@media (max-width: 900px) {
+  .itemWrapper {
+    width: 18%;
+    height: 18%;
+  }
+  .itemIconCircle {
+    width: 50px;
+    height: 50px;
+  }
+  .itemIcon {
+    font-size: 1.8em;
+  }
+  .itemName {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 768px) {
+  .itemWrapper {
+    width: 22%;
+    height: 22%;
+  }
+  .itemIconCircle {
+    width: 40px;
+    height: 40px;
+  }
+  .itemIcon {
+    font-size: 1.6em;
+  }
+  .itemName {
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 500px) {
+  .itemWrapper {
+    width: 25%;
+    height: 25%;
+  }
+  .itemIconCircle {
+    width: 35px;
+    height: 35px;
+  }
+  .itemIcon {
+    font-size: 1.4em;
+  }
+  .itemName {
+    font-size: 0.7em;
+  }
+  /* На очень маленьких экранах описание скрывается, т.к. оно глобальное */
+  .globalItemDescription {
+    display: none;
+  }
+}
+.globalItemDescription.descriptionVisible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) translateY(0); /* Move to final position */
+  pointer-events: auto; /* Allows interaction when visible */
+}

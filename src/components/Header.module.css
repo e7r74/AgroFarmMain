@@ -1,0 +1,273 @@
+/* Header.module.css */
+
+.headerWrapper {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+}
+
+.headerContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+  .headerContainer {
+    flex-wrap: wrap;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+}
+
+.logoImage {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.burgerMenu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.burgerMenu span {
+  height: 3px;
+  width: 25px;
+  background-color: #333;
+  margin-bottom: 4px;
+  border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  .burgerMenu {
+    display: flex;
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    width: 100%;
+    display: none; /* Скрыто по умолчанию для мобильных */
+    margin-top: 10px;
+  }
+  .nav.isOpen { /* Класс для открытого мобильного меню */
+    display: flex;
+  }
+}
+
+.navLink {
+  color: #555;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navLink:hover {
+  color: #007bff;
+}
+
+@media (max-width: 768px) {
+  .navLink {
+    margin: 10px 0;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.languageDropdown {
+  position: relative;
+  display: inline-block;
+  margin: 0 15px;
+}
+
+@media (max-width: 768px) {
+  .languageDropdown {
+    margin: 10px 0;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.currentLanguage {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #555;
+  font-weight: 500;
+}
+
+.currentLanguage svg:first-child {
+  margin-right: 5px;
+}
+
+.currentLanguage svg:last-child {
+  margin-left: 5px;
+}
+
+.currentLanguage:hover {
+  color: #007bff;
+}
+
+@media (max-width: 768px) {
+  .currentLanguage {
+    justify-content: center;
+  }
+}
+
+.dropdownContent {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 5px;
+  right: 0; /* Выравнивание по правому краю */
+}
+
+/* Показываем выпадающий список при наведении на родителя */
+.languageDropdown:hover .dropdownContent {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .dropdownContent {
+    position: static; /* Для мобильных, отображать по потоку контента */
+    width: 100%;
+    box-shadow: none;
+    background-color: transparent;
+    border-top: 1px solid #eee;
+    margin-top: 5px;
+  }
+}
+
+.dropdownItem {
+  color: black;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+
+.dropdownItem:hover {
+  background-color: #f1f1f1;
+}
+
+@media (max-width: 768px) {
+  .dropdownItem {
+    text-align: center;
+    padding: 8px 0;
+  }
+}
+
+.actionButtons {
+  display: flex;
+  align-items: center;
+}
+
+.actionButtons.mobileOnly {
+  display: none; /* По умолчанию скрыто для мобильных */
+}
+
+@media (max-width: 768px) {
+  .actionButtons.mobileOnly {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+  .actionButtons.mobileOnly .button {
+    margin: 5px 0;
+    width: 100%;
+  }
+}
+
+.actionButtons.desktopOnly {
+  display: flex; /* По умолчанию отображается на десктопе */
+}
+
+@media (max-width: 768px) {
+  .actionButtons.desktopOnly {
+    display: none; /* Скрыто для мобильных */
+  }
+}
+
+.clickableText {
+  color: #007bff;
+  text-decoration: none;
+
+  font-weight: 500;
+  margin-right: 20px;
+  transition: color 0.3s ease;
+
+   padding: 0; /* Убедитесь, что здесь или где-то еще нет большого padding */
+  font-size: 0;
+}
+
+.clickableText:hover {
+  color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .clickableText {
+    margin: 10px 0;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-left: 10px;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.button svg {
+  margin-right: 8px;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .button {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}

@@ -1,0 +1,296 @@
+/* src/components/MapCoverage/MapCoverage.module.css */
+
+.mapCoverageSection {
+  padding: 70px 20px 70px; /* Как вы указали */
+  text-align: center;
+  overflow: hidden;
+
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.mapCoverageSection.animatedIn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* -------------------- KEYFRAME ANIMATIONS -------------------- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* -------------------- ELEMENT-SPECIFIC STYLES AND ANIMATIONS -------------------- */
+
+.pageTitle {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.mapCoverageSection.animatedIn .pageTitle {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 30px;
+}
+
+.mapContainer {
+  width: 100%;
+  max-width: 900px;
+}
+
+.mapSvg {
+  padding-top: 55px; /* Проверьте необходимость этого отступа, возможно, лучше управлять внешним отступом секции/контейнера */
+  width: 100%; /* Убедитесь, что SVG всегда занимает 100% ширины своего контейнера */
+  height: auto;
+  display: block;
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+.mapCoverageSection.animatedIn .mapSvg {
+  opacity: 1;
+  transition-delay: 0.4s;
+}
+
+.land {
+  fill: #a0d8b3;
+  stroke: #777;
+  stroke-width: 0.5px;
+  transition: fill 0.3s ease, stroke 0.3s ease;
+  cursor: pointer;
+}
+
+.land:hover {
+  fill: #01632a;
+}
+
+.hoveredRegion {
+  fill: #4CAF50 !important;
+}
+
+/* Tooltip styles */
+.mapTooltip {
+    position: fixed; /* КРИТИЧНО: ДОЛЖНО БЫТЬ FIXED! */
+    background-color: #f7f7f7;
+    color: #333;
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-size: 0.95em;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    white-space: normal;
+    /* Убедитесь, что это значение НИЖЕ вашей фиксированной шапки (например, если шапка 1000, то тут 999) */
+    z-index: 999; 
+    max-width: 280px; 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border: 1px solid #e0e0e0;
+
+    /* ДОБАВЛЕНО/ИСПРАВЛЕНО: Ограничение высоты для всего тултипа */
+    /* calc(100vh - 100px) означает, что тултип не займет всю высоту, оставляя 50px сверху и 50px снизу */
+    max-height: calc(100vh - 100px); 
+    overflow-y: auto; /* Добавит скроллбар для всего тултипа, если его высота превысит max-height */
+}
+
+.mapTooltip.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.tooltipHeader {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 10px;
+}
+
+.tooltipTitle {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #0056b3;
+}
+
+.tooltipDescription {
+    display: flex;
+    justify-content: start;
+    margin-bottom: 15px;
+    line-height: 1.5;
+    color: #555;
+    font-size: 0.9em;
+    width: 100%;
+    box-sizing: border-box;
+    
+    /* ИСПРАВЛЕНИЕ: Ограничение высоты и прокрутка для описания */
+    max-height: 120px; /* Максимальная высота только для текстового описания */
+    overflow-y: auto; /* Добавит прокрутку для описания, если текст превышает max-height */
+    padding-right: 10px; /* Отступ справа, чтобы текст не прижимался к скроллбару */
+}
+
+.tooltipLink {
+    display: inline-flex;
+    align-items: center;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.85em;
+    transition: color 0.2s;
+}
+
+.tooltipLink:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.externalLinkIcon {
+    margin-left: 5px;
+    font-size: 0.9em;
+}
+
+/* Info Panel (for mobile or specific layout) */
+.infoPanel {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 400px;
+  text-align: left;
+  max-height: calc(100vh - 150px); /* Для прокрутки содержимого панели на мобильных/узких экранах */
+  overflow-y: auto;
+  padding-right: 15px; /* Для избежания наложения текста на полосу прокрутки */
+  box-sizing: border-box;
+
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.mapCoverageSection.animatedIn .infoPanel {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.6s;
+}
+
+.infoPanel h2 {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.infoPanel h3 {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.infoPanel ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.infoPanel li {
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 3px;
+  padding-left: 15px;
+  position: relative;
+}
+
+.infoPanel li::before {
+    content: "•";
+    color: #007bff;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.infoPanelPlaceholder {
+    font-style: italic;
+    color: #999;
+}
+
+
+/* Media Queries for Responsive Layout */
+@media (min-width: 1025px) {
+  .container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .mapContainer {
+    flex-shrink: 0;
+    margin-right: 20px;
+  }
+
+  .mapSvg {
+      width: 100%;
+      height: auto;
+  }
+
+  .infoPanel {
+    flex-grow: 1;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .mapCoverageSection {
+    padding: 0px 15px;
+  }
+
+  .pageTitle {
+    font-size: 2em;
+    margin-bottom: 30px;
+  }
+
+  .infoPanel {
+    max-width: 100%;
+    margin-top: 20px;
+  }
+
+  .mapSvg {
+    padding-top: 0px; /* Часто не нужен на мобильных */
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .infoPanel {
+    padding: 15px;
+  }
+}

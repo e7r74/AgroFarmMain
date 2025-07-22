@@ -1,0 +1,243 @@
+/* src/sections/CTABottomSection.module.css */
+
+.ctaBottomContainer {
+  padding: 80px 20px; /* Increased padding for better visual spacing */
+  background-color: #f0f0f0;
+  text-align: center;
+  overflow: hidden; /* Important for hiding elements before animation */
+
+  /* Initial state for the entire section's scroll animation */
+  opacity: 0;
+  transform: translateY(50px); /* Start slightly below */
+  transition: opacity 1s ease-out, transform 1s ease-out; /* Smooth transition for the section */
+}
+
+/* Class applied by JavaScript when the section enters the viewport */
+.ctaBottomContainer.animatedIn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* -------------------- ANIMATIONS FOR CHILD ELEMENTS -------------------- */
+/* General fade-in from bottom animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* General fade-in animation (for message, etc.) */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Scale-in animation (for the main button, if used) */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+.ctaContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* -------------------- Title -------------------- */
+.ctaTitle {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 15px;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.ctaBottomContainer.animatedIn .ctaTitle {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s; /* Delay for appearance */
+}
+
+/* -------------------- Subtitle -------------------- */
+.ctaSubtitle {
+  font-size: 1.2em;
+  color: #666;
+  margin-bottom: 30px;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.ctaBottomContainer.animatedIn .ctaSubtitle {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.4s; /* Delay for appearance */
+}
+
+/* -------------------- Contact Form -------------------- */
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.ctaBottomContainer.animatedIn .contactForm {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.6s; /* Delay for appearance */
+}
+
+
+.contactInput {
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+  width: 100%;
+  max-width: 300px; /* Changed width to max-width for better responsiveness */
+  box-sizing: border-box;
+}
+
+.contactInput::placeholder {
+  color: #999;
+}
+
+.ctaFormButton {
+  padding: 12px 9px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  max-width: 150px;
+}
+
+.ctaFormButton:hover {
+  background-color: #0056b3;
+}
+
+/* -------------------- Message -------------------- */
+.message {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-size: 1em;
+  /* Removed default color here to rely on specific success/error classes */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.5s ease-out; /* Simple fade in */
+}
+.ctaBottomContainer.animatedIn .message {
+  opacity: 1;
+  transition-delay: 0.8s; /* Delay after form */
+}
+
+/* Specific styles for error messages (red) */
+.messageError {
+  color: #d9534f; /* Red color for errors */
+}
+
+/* Specific styles for success messages (green) */
+.messageSuccess {
+  color: #28a745; /* Green color for success */
+}
+
+
+/* -------------------- Main CTA Button (if uncommented) -------------------- */
+.ctaMainButton {
+  padding: 12px 25px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 15px;
+  width: 100%;
+  max-width: 250px;
+}
+
+.ctaMainButton:hover {
+  background-color: #218838;
+}
+
+/* -------------------- Your original .ctaButton style -------------------- */
+.ctaButton {
+  background: #023f23;
+  color: white;
+  padding: 18px 40px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.2em;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+
+  /* Initial state for this button's animation */
+  opacity: 0;
+  transform: scale(0.9);
+}
+.ctaBottomContainer.animatedIn .ctaButton {
+  opacity: 1;
+  transform: scale(1);
+  transition-delay: var(--animation-delay); /* Use the CSS variable for delay */
+}
+
+
+.ctaButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+  opacity: 0.9;
+}
+
+.ctaButton:active {
+  transform: translateY(0);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Media queries for larger screens */
+@media (min-width: 768px) {
+  .contactForm {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+
+
+  .ctaFormButton {
+    width: auto;
+  }
+
+  .ctaMainButton {
+    width: auto;
+  }
+    .ctaButton {
+    padding: 12px 25px;
+    font-size: 0.9em;
+  }
+}

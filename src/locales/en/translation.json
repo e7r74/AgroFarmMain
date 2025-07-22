@@ -1,0 +1,547 @@
+{
+  "header": {
+    "about": "About Us",
+    "contact": "Contact Us", 
+    "privacy_policy": "Privacy Policy", 
+    "login": "Login",
+    "get_a_demo": "Get a Demo",
+    "home": "Home"
+  },
+    "demo_popup": {
+    "title": "Demo Access to AgroFarm Platform",
+    "instruction_intro": "To test the platform, enter the following details on the login screen:",
+    "login_label": "Login:",
+    "password_label": "Password:",
+    "features_intro": "After logging in, you will be able to:",
+    "feature_1": "• View the interface,",
+    "feature_2": "• Add fields and crops,",
+    "feature_3": "• Explore AI recommendations,",
+    "feature_4": "• Analyze data from plots and sensors.",
+    "data_note": "The platform operates in demo mode — data is not saved.",
+    "go_to_login_button": "Go to Login"
+  },
+  "megaMenu": {
+    "financials": "Financials",
+    "commodity_pro": "Commodity Pro",
+    "imagery": "Imagery",
+    "operations": "Operations",
+    "planting": "Planting",
+    "protector": "Protector",
+    "seed_selector": "Seed Selector",
+    "spray_assist": "Spray Assist",
+    "sustainability": "Sustainability"
+  },
+  "heroSection": {
+    "pre_title": "Agro Farm",
+    "title": "Platform for agricultural analysis, monitoring, and automation",
+    "subtitle": "Agro Farm is the connection between you and your crop's efficiency. A unified platform with integrated services and solutions that interact with each other, helping farmers and consultants understand how to optimize their farm and their day.",
+    "subtitle1": "When the land works smart",
+    "button": "ABOUT AGRO FARM"
+  },
+  "general": {
+    "optimize_agriculture": "Optimize agriculture with us",
+    "advanced_tech_for_yield": "Advanced technologies to increase your farm's yield, efficiency, and sustainability.",
+    "start_for_free": "Start for Free"
+  },
+  "solutionsSection": {
+    "our_solutions_title": "Our Solutions",
+    "explore_products_title": "Explore Our Products",
+    "learn_more": "Learn More",
+    "carousel_categories": [
+      {"name": "Commodity Pro", "icon": "FaWheatAwn"},
+      {"name": "Protector", "icon": "FaShieldHalved"},
+      {"name": "Planting", "icon": "FaSeedling"},
+      {"name": "Imagery", "icon": "FaSatelliteDish"},
+      {"name": "Sustainability", "icon": "FaLeaf"},
+      {"name": "Seed Selector", "icon": "FaTree"},
+      {"name": "Spray Assist", "icon": "FaFlask"}
+    ],
+    "cards": [
+      {
+        "name": "Commodity Pro",
+        "description": "Protect the value of your premium crop protection purchases from falling commodity prices during the growing season."
+      },
+      {
+        "name": "Protector",
+        "description": "A smart management tool for improving agronomic decisions."
+      },
+      {
+        "name": "Planting",
+        "description": "Solve in-field variability issues, optimize costs for each field, get the most out of hybrids, and improve ROI."
+      },
+      {
+        "name": "Imagery",
+        "description": "A simple tool providing regular crop health monitoring throughout the season and historical comparisons."
+      },
+      {
+        "name": "Sustainability",
+        "description": "A free and easy tool to benchmark your sustainability leadership against other farmers and identify opportunities for improvement using the Sustainable Outcome in Agriculture standard."
+      },
+      {
+        "name": "Seed Selector",
+        "description": "With Agro Farm, you can get personalized seed recommendations specifically tailored to your fields."
+      },
+      {
+        "name": "Spray Assist",
+        "description": "Help spray operators select the most appropriate application methods on the fly."
+      }
+    ]
+  },
+  "solutionsInfographic": {
+    "main_title": "Agro Farm - You know the field. We provide the numbers.",
+    "center_label_main": "PLANNING",
+    "center_label_sub": "PREPARATION",
+    "center_label_sub2": "PLANTING",
+    "center_info_main": "MONITORING -",
+    "center_info_sub": "CROP PROTECTION",
+    "items": [
+      {
+        "name": "Soil Sensors",
+        "description": "• Soil Moisture\n• Soil Temperature\n• Air Humidity — built-in air sensor\n• Electrical Conductivity (EC) — salt level\n• Soil pH\n• Nitrogen (N) — shows trend, not actual values\n• Phosphorus (P) — similar trend\n• Potassium (K) — trend",
+        "icon": "FaWheatAwn",
+        "label": ""
+      },
+      {
+        "name": "All this data:",
+        "description": "• is collected in real-time\n• used for AI analytics and recommendations\n• helps optimize irrigation, fertilization, treatment, machinery, and yield forecasts",
+        "icon": "FaShieldHalved",
+        "label": ""
+      },
+      {
+        "name": "Plants and Biomass",
+        "description": "• NDVI / NDRE / SAVI — vegetation indices (via drones or cameras)\n• Plant Growth (ultrasonic or optical sensors)\n• Trunk Diameter (for trees or grapes)\n• Chlorophyll Level\n• Leaf Infrared Reflection (stress)",
+        "icon": "FaSeedling",
+        "label": "PLANNING PREPARATION PLANTING"
+      },
+      {
+        "name": "Other Sensors",
+        "description": "• Water Level Sensors (in irrigation ditches, tanks, pipes)\n• Water Pressure\n• Leakage / Flooding\n• Light Level in Greenhouses\n• Cameras and Motion (for security)",
+        "icon": "FaSatelliteDish",
+        "label": ""
+      },
+      {
+        "name": "Atmospheric and Climate Sensors",
+        "description": "• Air Temperature\n• Relative Humidity\n• Atmospheric Pressure\n• Wind Speed and Direction\n• Precipitation Amount\n• Solar Radiation\n• UV-index\n• Evapotranspiration (ET) Level\n• Dew Point Temperature\n• Plant Leaf Temperature (using an IR thermometer)",
+        "icon": "FaLeaf",
+        "label": ""
+      }
+    ]
+  },
+  "platformBenefits": {
+    "main_title": "Why choose Agro Farm?",
+    "features": [
+      {
+        "id": 1,
+        "color": "red",
+        "icon": "FaChartLine",
+        "title": "All-in-one — a unified digital ecosystem",
+        "description": "Combine all processes on one platform: from monitoring and analytics to machinery and resource management. No fragmented solutions – just convenience, control, and real-time synchronization."
+      },
+      {
+        "id": 2,
+        "color": "purple",
+        "icon": "FaTools",
+        "title": "AI Agronomist: recommendations, forecasts, results",
+        "description": "Your digital assistant in the field.\nArtificial intelligence analyzes data from sensors, considers weather, soil conditions, and crop type to proactively identify risks, forecast yields, and provide personalized recommendations."
+      },
+      {
+        "id": 3,
+        "color": "blue",
+        "icon": "FaLink",
+        "title": "Equipment integration — step by step",
+        "description": "The system supports various types of sensors, drones, and agricultural machinery. Connection is done according to ready-made scenarios — we support the setup so you're not left alone with the tech."
+      },
+      {
+        "id": 4,
+        "color": "green",
+        "icon": "FaLeaf",
+        "title": "Resource savings: \nwater, fertilizers, fuel",
+        "description": "Smart management allows you to use only the necessary amount of resources. This reduces costs, minimizes losses, and helps protect the environment."
+      }
+    ]
+  },
+  "ctaBottomSection": {
+    "title": "Ready to get started?",
+    "subtitle": "Leave your number or email, and we'll contact you shortly!",
+    "button": "Submit",
+    "formButton": "Submit",
+    "mainButton": "Learn More",
+    "placeholder": "Your email or phone number",
+    "inputAriaLabel": "Field for entering email or phone number",
+    "successMessage": "Thank you! Your application has been successfully submitted. We will contact you shortly.",
+    "errorMessage": "An error occurred while submitting the data. Please try again.",
+    "validationEmpty": "Please enter your email or phone number.",
+    "validationInvalid": "Please enter a valid email or phone number.",
+    "mainButtonAction": "You clicked the 'Learn More' button!"
+  },
+  "aboutUsSection": {
+    "breadcrumbs": "Learn about us",
+    "title": "We develop digital solutions for the agricultural sector, uniting",
+    "description": "Digital agribusiness management AgroFarm",
+    "step1Title": "IoT Sensors",
+    "step1Text": "We collect data from fields: humidity, temperature, pH, EC, etc.",
+    "step2Title": "Drones",
+    "step2Text": "Plant condition analysis, spraying, surveying, and site security.",
+    "step3Title": "AI Agronomist",
+    "step3Text": "Analytics, forecasts, and recommendations based on data and weather conditions.",
+    "step4Title": "Autopilots and Machinery",
+    "step4Text": "Automation of field work — from cultivation to fertilization.",
+    "step5Title": "Our Goal",
+    "step5Text": "AgroFarm helps increase yields, reduce costs, and implement sustainable technologies in agriculture."
+  },
+  "ctaSection": {
+    "mainTitle": "Agro Farm: A Smart Assistant for Your Farm!",
+    "subDescription": "Shows where and how much to water, suggests where and what to fertilize with.",
+    "feature1": "Save up to 30% on water and fertilizers",
+    "feature2": "Increase yield by 40%",
+    "feature3": "Full control from your smartphone",
+    "feature4": "Payback from the first season",
+    "offerText": "14 Days Free!",
+    "buttonText": "WhatsApp",
+    "imageAlt": "Agro Farm robot assistant",
+    "companyTagline": "Developed by FARMMEDEX: Future Technologies - Today."
+  },
+
+
+
+
+
+
+
+    "mapCoverage": {
+    "pageTitle": "Geographic Information",
+    "tooltip": {
+      "header": "Region Information",
+      "title": "{regionName}",
+      "description": "{regionDescription}",
+      "plantsTitle": "Main Crops:",
+      "learnMore": "Learn More",
+      "externalLinkIcon": "↗"
+    },
+    "infoPanel": {
+      "title": "Region Information",
+      "placeholder": "Click on a region on the map to see brief information."
+    },
+    "regionsData": {
+      "KZ10": {
+        "name": "Abai Region",
+        "description": "An eastern region of Kazakhstan, formed in 2022 from a part of the East Kazakhstan Region. Characterized by diverse climate and landscape, favorable for the development of grain farming, livestock breeding, and mineral extraction.",
+        "plants": [
+          "Wheat",
+          "Barley",
+          "Oats",
+          "Sunflower",
+          "Potatoes",
+          "Vegetables"
+        ]
+      },
+      "KZ11": {
+        "name": "Akmola Region",
+        "description": "A central region of Kazakhstan, where the capital Astana is located. Known as the main grain-producing center of the country with developed livestock breeding.",
+        "plants": [
+          "Wheat (spring)",
+          "Barley",
+          "Sunflower",
+          "Flax",
+          "Potatoes",
+          "Vegetables"
+        ]
+      },
+      "KZ12": {
+        "name": "Aktobe Region",
+        "description": "A western region of Kazakhstan, bordering Russia and Uzbekistan. It has vast steppes and semi-deserts, developed livestock breeding, and significant oil and gas reserves.",
+        "plants": [
+          "Barley",
+          "Wheat (drought-resistant varieties)",
+          "Potatoes",
+          "Vegetables"
+        ]
+      },
+      "KZ13": {
+        "name": "Almaty Region",
+        "description": "A southeastern region of Kazakhstan, characterized by a diverse climate – from deserts to high-mountain areas. It is an agrarian center with developed horticulture, vegetable growing, and grain crops.",
+        "plants": [
+          "Wheat",
+          "Barley",
+          "Corn",
+          "Sugar beet",
+          "Tobacco"
+        ]
+      },
+      "KZ14": {
+        "name": "Atyrau Region",
+        "description": "A western region of Kazakhstan, located in the Caspian lowland. The main wealth of the region is oil and gas, agriculture specializes in livestock breeding in arid conditions.",
+        "plants": [
+          "Barley",
+          "Corn",
+          "Sugar beet"
+        ]
+      },
+      "KZ15": {
+        "name": "East Kazakhstan Region",
+        "description": "An eastern region of Kazakhstan with mountainous terrain and rich water resources. Characterized by developed grain farming, livestock breeding, and beekeeping.",
+        "plants": [
+          "Wheat",
+          "Barley",
+          "Oats",
+          "Buckwheat",
+          "Sunflower",
+          "Flax",
+          "Rapeseed",
+          "Potatoes"
+        ]
+      },
+      "KZ16": {
+        "name": "Jambyl Region",
+        "description": "A southern region of Kazakhstan with a diverse climate, from semi-deserts to the foothills of the Tian Shan. A large agricultural region with developed vegetable growing, horticulture, and livestock breeding.",
+        "plants": [
+          "Sugar beet",
+          "Corn",
+          "Wheat",
+          "Barley",
+          "Vegetables ",
+          "Potatoes",
+          "Fruits (apples, pears)",
+          "Grapes",
+          "Melons and gourds"
+        ]
+      },
+      "KZ17": {
+        "name": "West Kazakhstan Region",
+        "description": "A western region of Kazakhstan, located on the border with Russia. Characterized by vast steppes and significant hydrocarbon reserves. Agriculture is focused on livestock breeding.",
+        "plants": [
+          "Wheat (drought-resistant varieties)",
+          "Barley",
+          "Forage crops",
+          "Melons and gourds"
+        ]
+      },
+      "KZ18": {
+        "name": "Karaganda Region",
+        "description": "The largest region by area in Kazakhstan, located in the center of the country. An important industrial center with developed coal mining and metallurgy, as well as significant agricultural production.",
+        "plants": [
+          "Wheat (spring)",
+          "Barley",
+          "Oats",
+          "Potatoes",
+          "Forage crops"
+        ]
+      },
+      "KZ19": {
+        "name": "Kostanay Region",
+        "description": "A northwestern region of Kazakhstan, one of the leading grain-producing regions of the country. It has fertile soils and a favorable climate for growing grains.",
+        "plants": [
+          "Wheat (spring and winter)",
+          "Barley",
+          "Oats",
+          "Buckwheat",
+          "Sunflower",
+          "Flax",
+          "Potatoes",
+          "Vegetables",
+          "Forage crops"
+        ]
+      },
+      "KZ20": {
+        "name": "Kyzylorda Region",
+        "description": "A southern region of Kazakhstan, located in the Syr Darya river delta. Known as the main rice-producing region of the country, as well as developed livestock breeding.",
+        "plants": [
+          "Rice",
+          "Corn",
+          "Wheat (winter)",
+          "Barley",
+          "Melons and gourds ",
+          "Vegetables",
+          "Forage crops"
+        ]
+      },
+      "KZ21": {
+        "name": "Mangystau Region",
+        "description": "A southwestern region of Kazakhstan, located on the coast of the Caspian Sea. Characterized by a desert climate and is a major center for oil and gas production. Agriculture is severely limited, but camel breeding and sheep breeding are developed.",
+        "plants": [
+          "Forage crops",
+          "Vegetables",
+          "Melons and gourds"
+        ]
+      },
+      "KZ22": {
+        "name": "Pavlodar Region",
+        "description": "A northeastern region of Kazakhstan, located along the Irtysh River. A large industrial and agricultural center with developed grain farming, potato growing, and livestock breeding.",
+        "plants": [
+          "Wheat (spring)",
+          "Barley",
+          "Oats",
+          "Buckwheat",
+          "Sunflower",
+          "Flax",
+          "Potatoes",
+          "Vegetables",
+          "Forage crops"
+        ]
+      },
+      "KZ23": {
+        "name": "North Kazakhstan Region",
+        "description": "The northernmost region of Kazakhstan, bordering Russia. The main grain-producing region of the country with fertile chernozems and high agricultural potential.",
+        "plants": [
+          "Wheat (spring - main crop)",
+          "Barley",
+          "Oats",
+          "Buckwheat",
+          "Peas",
+          "Flax",
+          "Rapeseed",
+          "Sunflower",
+          "Potatoes",
+          "Vegetables"
+        ]
+      },
+      "KZ24": {
+        "name": "Turkistan Region",
+        "description": "One of the most densely populated and agriculturally developed regions in southern Kazakhstan. The favorable climate contributes to the cultivation of a wide range of agricultural crops.",
+        "plants": [
+          "Cotton",
+          "Rice",
+          "Wheat (winter)",
+          "Barley",
+          "Corn",
+          "Melons and gourds (watermelons, melons)",
+          "Vegetables (tomatoes, cucumbers, peppers, onions)",
+          "Potatoes",
+          "Fruits (peaches, apricots, grapes)",
+          "Forage crops"
+        ]
+      },
+      "KZ25": {
+        "name": "Ulytau Region",
+        "description": "A new region formed in 2022 from a part of the Karaganda Region. Located in the central part of Kazakhstan. Characterized by significant potential in livestock breeding, as well as the presence of minerals.",
+        "plants": [
+          "Forage crops",
+          "Barley (drought-resistant varieties)",
+          "Oats (on a limited scale)",
+          "Potatoes (in gardens)"
+        ]
+      },
+      "KZ26": {
+        "name": "Zhetysu Region",
+        "description": "A new region formed in 2022 from a part of the Almaty Region. Located in southeastern Kazakhstan, it has a diverse climate and fertile lands. It is an important agricultural region with developed horticulture, vegetable growing, and grains.",
+        "plants": [
+          "Forage crops",
+          "Barley (drought-resistant varieties)",
+          "Oats (on a limited scale)",
+          "Potatoes (in gardens)"
+        ]
+      },
+      "KZ71": {
+        "name": "Astana (city)",
+        "description": "The capital of Kazakhstan, located in the Akmola Region. Agriculture is mainly represented by suburban production of vegetables and dairy products to supply the urban population.",
+        "plants": [
+          "Vegetables (in greenhouse complexes and suburban farms)",
+          "Potatoes",
+          "Greens",
+          "Flowers"
+        ]
+      },
+      "KZ75": {
+        "name": "Almaty (city)",
+        "description": "The largest city in Kazakhstan, located at the foothills of the Trans-Ili Alatau mountains. Agriculture is represented by intensive horticulture, vegetable growing, and floriculture in the suburbs, as well as the processing industry.",
+        "plants": [
+          "Orchards (apples, pears, apricots)",
+          "Grapes",
+          "Vegetables (tomatoes, cucumbers, peppers)",
+          "Berries",
+          "Flowers (intensive cultivation)"
+        ]
+      },
+      "KZ79": {
+        "name": "Shymkent (city)",
+        "description": "One of the largest cities in Kazakhstan, located in the south of the country. It is an important agricultural and industrial center, surrounded by fertile lands where melons, cotton, and vegetables are grown.",
+        "plants": [
+          "Watermelons",
+          "Melons",
+          "Cotton",
+          "Vegetables ",
+          "Potatoes",
+          "Corn",
+          "Wheat",
+          "Fruits ",
+          "Grapes"
+        ]
+      },
+      "KZ-ARA": {
+        "name": "Aral Region",
+        "description": "A region located around the Aral Sea, characterized by complex environmental conditions and the development of specific types of agriculture.",
+        "plants": [
+          "Kyzylorda rice",
+          "Melons and gourds",
+          "Forage grasses",
+          "Salt-tolerant crops"
+        ]
+      }
+    }
+  },
+
+
+
+
+
+  "contactPage": {
+    "title": "Contact Us",
+    "description": "Do you have questions, suggestions, or need assistance? We are always ready to help!",
+    "our_contacts": "Our Contacts",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address",
+    "full_address": "Almaty city, Basenov street, 27A, 1st floor", 
+    "map_location": "Our Location on the Map",
+    "open_on_2gis": "Open on 2GIS",
+    "open_on_2gis_short": "Open in 2GIS"
+  },
+    "footer": {
+    "all_rights_reserved": "All rights reserved.",
+    "privacy_policy": "Privacy Policy",
+    "terms_of_use": "Terms of Use",
+    "contacts": "Contacts"
+  },
+  "termsOfUsePage": {
+    "title": "Terms of Use",
+    "intro": "Welcome to Agro Farm! These Terms of Use ('Terms') govern your access to and use of our services, including our website, applications, and any related offerings (collectively, the 'Services'). By accessing or using our Services, you agree to be bound by these Terms and our Privacy Policy. If you do not agree to these Terms, please do not use our Services.",
+    "section1": {
+      "title": "1. Acceptance of Terms",
+      "content1": "By using Agro Farm's Services, you confirm that you are at least 18 years old and capable of forming a binding contract.",
+      "content2": "If you are using the Services on behalf of an organization, you represent that you have the authority to bind that organization to these Terms."
+    },
+    "section2": {
+      "title": "2. Changes to Terms",
+      "content": "Agro Farm reserves the right to modify or update these Terms at any time. We will notify you of any significant changes by posting the new Terms on our website or through other appropriate communication channels. Your continued use of the Services after such modifications constitutes your acceptance of the revised Terms."
+    },
+    "section3": {
+      "title": "3. User Accounts",
+      "content": "To access certain features of our Services, you may need to create an account. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. You agree to notify Agro Farm immediately of any unauthorized use of your account."
+    },
+    "section4": {
+      "title": "4. Prohibited Conduct",
+      "content": "You agree not to use the Services for any unlawful or prohibited purpose, including but not limited to: uploading malicious software, engaging in fraudulent activities, violating intellectual property rights, or disrupting the integrity or performance of the Services."
+    },
+    "section5": {
+      "title": "5. Intellectual Property",
+      "content1": "All content, features, and functionality of the Services, including but not limited to text, graphics, logos, images, and software, are the exclusive property of Agro Farm and its licensors. You may not reproduce, distribute, modify, or create derivative works from any part of the Services without our express written consent. This includes, but is not limited to:",
+      "list1": " Copying or replicating any part of the website's design or code.",
+      "list2": " Using our trademarks or logos without permission.",
+      "list3": " Reverse engineering any software or applications provided.",
+      "content2": "Any unauthorized use is strictly prohibited and may result in legal action."
+    },
+    "section6": {
+      "title": "6. Disclaimer of Warranties",
+      "content": "The Services are provided 'as is' and 'as available,' without any warranties of any kind, either express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement. Agro Farm does not warrant that the Services will be uninterrupted, error-free, or secure."
+    },
+    "section7": {
+      "title": "7. Limitation of Liability",
+      "content": "To the fullest extent permitted by law, Agro Farm shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the Services; any conduct or content of any third party on the Services; or unauthorized access, use, or alteration of your transmissions or content."
+    },
+    "section8": {
+      "title": "8. Governing Law and Jurisdiction",
+      "content": "These Terms shall be governed by and construed in accordance with the laws of the Republic of Kazakhstan, without regard to its conflict of law principles. Any disputes arising from or relating to these Terms or the Services shall be resolved exclusively in the courts of Almaty, Kazakhstan."
+    },
+    "contact_info": "For any questions regarding these Terms, please contact us at info@agrofarm.kz."
+  }
+}

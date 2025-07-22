@@ -1,0 +1,251 @@
+/* src/sections/KeyFeatures/KeyFeatures.module.css */
+
+.keyFeaturesSection {
+  background-color: #f7f9fc;
+  padding: 100px 20px;
+  text-align: center;
+  overflow: hidden; /* Важно для скрытия элементов до анимации */
+
+  /* Изначальное состояние для анимации всей секции */
+  opacity: 0;
+  transform: translateY(50px); /* Начинаем чуть ниже */
+  transition: opacity 1s ease-out, transform 1s ease-out; /* Плавный переход для секции */
+}
+
+/* Класс, который добавляется JavaScript при входе секции в область видимости */
+.keyFeaturesSection.sectionAnimatedIn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* -------------------- Заголовок секции -------------------- */
+.sectionTitle {
+  font-size: 2.8em;
+  font-weight: 700;
+  color: #0b1a2b;
+  margin-bottom: 60px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.3;
+
+  /* Изначальное состояние для анимации заголовка */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Плавный переход для заголовка */
+}
+
+/* Анимация заголовка, когда секция становится видимой */
+.keyFeaturesSection.sectionAnimatedIn .sectionTitle {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s; /* Небольшая задержка после появления секции */
+}
+
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.featureCard {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  position: relative;
+  z-index: 1; /* Чтобы тень и элементы были поверх линий, если они есть */
+
+  /* Изначальное состояние для анимации каждой карточки */
+  opacity: 0;
+  transform: translateY(50px); /* Начинаем скрытыми и сдвинутыми вниз */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Плавный переход для карточки */
+}
+
+/* Анимация карточки, когда она становится видимой */
+.featureCard.cardAnimatedIn {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: var(--animation-delay); /* Используем CSS-переменную для последовательной задержки */
+}
+
+/* Эффект при наведении на карточку (сохраняем, но убедимся, что он не конфликтует с анимацией появления) */
+.featureCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  background-color: #f0f4f8;
+}
+
+/* ... (остальной CSS остается без изменений) ... */
+
+/* Обертка для иконки и номера */
+.iconNumberWrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.iconBackground {
+  background-color: #ffffff;
+  border-radius: 15px;
+  width: 90px;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  margin-right: 20px;
+  border: 1px solid #e0e0e0;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.featureCard:hover .iconBackground {
+  background-color: #e6f7df;
+  border-color: #a4ce38;
+}
+
+.featureIcon {
+  font-size: 3.5em;
+  color: #023f23;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.featureCard:hover .featureIcon {
+  color: #0b1a2b;
+  transform: scale(1.1);
+}
+
+.numberWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.featureNumber {
+  font-size: 3em;
+  font-weight: 700;
+  color: #0b1a2b;
+  line-height: 1;
+  transition: color 0.3s ease;
+}
+
+.featureCard:hover .featureNumber {
+  color: #a4ce38;
+}
+
+.colorLine {
+  width: 60px;
+  height: 6px;
+  border-radius: 3px;
+  margin-top: 5px;
+}
+
+/* Цвета для полосок */
+/* .color_red { background-color: #ff58330c; } 
+.color_purple { background-color: #9c59b609; }
+.color_blue { background-color: #3498db0b; }
+.color_green { background-color: #27ae5f0b; } */
+
+
+.featureTitle {
+  white-space: pre-line;
+  font-size: 1.8em;
+  font-weight: 600;
+  color: #0b1a2b;
+  margin-bottom: 15px;
+  line-height: 1.3;
+  transition: color 0.3s ease;
+}
+
+.featureCard:hover .featureTitle {
+  color: #a4ce38;
+}
+
+.featureDescription {
+  font-size: 1.1em;
+  color: #555555;
+  line-height: 1.6;
+}
+
+/* --- Адаптивность --- */
+@media (max-width: 1024px) {
+  .featuresGrid {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .keyFeaturesSection {
+    padding: 60px 15px;
+  }
+  .sectionTitle {
+    font-size: 2.2em;
+    margin-bottom: 40px;
+  }
+  .featureCard {
+    padding: 25px;
+  }
+  .iconBackground {
+    width: 70px;
+    height: 70px;
+    margin-right: 15px;
+  }
+  .featureIcon {
+    font-size: 2.8em;
+  }
+  .featureNumber {
+    font-size: 2.5em;
+  }
+  .colorLine {
+    width: 50px;
+    height: 5px;
+  }
+  .featureTitle {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  .featureDescription {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .sectionTitle {
+    font-size: 1.8em;
+  }
+  .featureCard {
+    padding: 20px;
+  }
+  .iconBackground {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+  }
+  .featureIcon {
+    font-size: 2.2em;
+  }
+  .featureNumber {
+    font-size: 2em;
+  }
+  .colorLine {
+    width: 40px;
+    height: 4px;
+  }
+  .featureTitle {
+    font-size: 1.3em;
+  }
+  .featureDescription {
+    font-size: 0.9em;
+  }
+}

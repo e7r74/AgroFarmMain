@@ -1,0 +1,126 @@
+/* src/components/MegaMenu.module.css */
+
+.megaMenuContainer {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  /* Изменено на 70vw, как вы указали */
+  width: 50vw;
+  /* Для центрирования относительно экрана, учитывая, что родительский элемент не на всю ширину */
+  transform: translateX(calc(-25vw + 50%)); /* 35vw - это половина 70vw */
+
+  /* Изменено на #023f23, как вы указали */
+  background-color: #023f23ef;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+  /* Анимация через max-height и opacity */
+  max-height: 0; /* Изначально скрыто */
+  opacity: 0;
+  overflow: hidden;
+  visibility: hidden; /* Скрываем/показываем */
+  pointer-events: none; /* Игнорировать события мыши */
+
+  /* Общие свойства для перехода */
+  transition-property: max-height, opacity, visibility, padding;
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+  padding: 0; /* Изначальный паддинг */
+  border-radius: 30px;
+}
+
+/* Класс для открытого состояния */
+.megaMenuContainer.isOpen {
+  max-height: 500px; /* Достаточная высота для контента */
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto; /* Включаем события мыши */
+  padding: 50px 0; /* Паддинг при открытии */
+}
+
+@media (max-width: 1024px) {
+  /* Если нужно изменить паддинг на мобильных, можно добавить здесь */
+  /* .megaMenuContainer.isOpen {
+    padding: 40px 0;
+  } */
+}
+
+@media (max-width: 768px) {
+  .megaMenuContainer {
+    display: none; /* Скрываем мега-меню на мобильных */
+  }
+}
+
+.megaMenuGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(180px, 1fr));
+  gap: 30px 80px;
+  max-width: 1200px; /* Ограничиваем общую ширину сетки для центрирования */
+  width: 100%;
+  padding: 0 60px; /* Горизонтальный паддинг внутри центрированной сетки */
+  box-sizing: border-box; /* Учитываем паддинг в ширине */
+  justify-items: start;
+  margin: 0 auto; /* Центрируем сетку внутри контейнера */
+}
+
+@media (max-width: 1200px) {
+  .megaMenuGrid {
+    grid-template-columns: repeat(3, minmax(180px, 1fr));
+    gap: 25px 60px;
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 900px) {
+  .megaMenuGrid {
+    grid-template-columns: repeat(2, minmax(180px, 1fr));
+    gap: 20px 40px;
+    padding: 0 30px;
+  }
+}
+
+.iconWrapper {
+  width: 45px;
+  height: 45px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  transition: border-color 0.3s ease;
+}
+
+.iconPlaceholder {
+  font-size: 1.8em; /* Размер иконки */
+  color: #c0c0c0; /* Иконка по умолчанию светло-серая */
+  line-height: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: color 0.3s ease; /* Плавный переход цвета иконки */
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #c0c0c0;
+  text-decoration: none;
+  font-size: 1.05em;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Эффекты при наведении на MenuItem */
+.menuItem:hover {
+  color: white;
+}
+
+.menuItem:hover .iconWrapper {
+  border-color: #27ae60;
+}
+
+.menuItem:hover .iconPlaceholder {
+  color: #27ae60; /* Иконка становится зеленой */
+}

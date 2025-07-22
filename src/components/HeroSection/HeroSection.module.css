@@ -1,0 +1,195 @@
+/* src/sections/HeroSection.module.css */
+
+.heroContainer {
+  max-height: none;
+  background-image: url('../../../public/image.png');
+  background-color: #81c78433;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 50px 80px 100px 80px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.agroText {
+  color: #023f23;
+}
+
+.farmText {
+  color: #0a9003;
+}
+
+/* -------------------- АНИМАЦИИ -------------------- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Базовые стили для элементов, которые будут анимироваться */
+.preTitle,
+.heroTitle,
+.heroSubtitle,
+.heroSubtitle1,
+.callToActionWrapper { /* Анимация теперь применяется к .callToActionWrapper */
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+/* Класс, который добавляется JavaScript при видимости элемента */
+.fadeInUp {
+  animation: fadeInUp 0.8s ease-out forwards var(--animation-delay, 0s);
+}
+
+/* -------------------- АДАПТИВНОСТЬ HeroContainer -------------------- */
+@media (max-width: 1024px) {
+  .heroContainer {
+    padding: 80px 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroContainer {
+    padding: 60px 20px;
+  }
+}
+
+/* -------------------- СТИЛИ ТЕКСТА -------------------- */
+.preTitle {
+  font-size: 50px;
+  font-weight: 700;
+  color: #02572f;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .preTitle {
+    font-size: 1.2em;
+  }
+}
+
+.heroTitle {
+  width: 90%;
+  font-size: 3em;
+  font-weight: 800;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  color: #023f23;
+  text-transform: uppercase;
+  line-height: 1.1;
+  max-width: 1100px;
+}
+
+.heroSubtitle1 {
+  color: #0a9003;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+@media (max-width: 1200px) {
+  .heroTitle {
+    font-size: 3.5em;
+  }
+}
+
+@media (max-width: 1024px) {
+  .heroTitle {
+    font-size: 3em;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.2em;
+  }
+}
+
+.heroSubtitle {
+  font-size: 1.1em;
+  margin-bottom: 30px;
+  color: #34495e;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .heroSubtitle {
+    font-size: 1em;
+  }
+}
+
+/* -------------------- СТИЛИ КНОПКИ (Обертки и самой ссылки) -------------------- */
+
+.callToActionWrapper {
+  /* Все стили, которые придают кнопке форму и фон, перенесены сюда */
+  display: flex; /* Makes the wrapper a flex container */
+  justify-content: center; /* Centers content (the link) horizontally */
+  align-items: center; /* Centers content (the link) vertically */
+  
+  /* You can make the wrapper a fixed size or content-dependent */
+  /* For button-like behavior, let the inner link define the size */
+  
+  /* The ref for animation is on this wrapper */
+  /* Remove opacity and transform here as they are handled by .fadeInUp and animation keyframes */
+  /* opacity: 0; */
+  /* transform: translateY(50px); */
+
+  /* Ensure the wrapper is wide enough to contain the button */
+  width: auto; /* Let the content define the width initially */
+  margin-top: 20px; /* Example: add some margin above the button */
+}
+
+/* Styles for the ScrollLink itself */
+.callToAction {
+  /* These styles define the visual appearance and clickable area of the button */
+  width: 600px;
+  display: inline-block; /* Essential to make padding work correctly for an anchor tag */
+  background-color: #023f23;
+  padding: 15px 30px;
+  border-radius: 25px;
+  color: #ffffff;
+  font-size: 1.1em;
+  font-weight: 600;
+  text-decoration: none; /* Removes underline from the link */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+  transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease; /* Smooth transitions */
+  white-space: nowrap; /* Prevents text from wrapping */
+  box-sizing: border-box; /* Includes padding in the element's total width/height */
+  min-height: 50px; /* Ensures a minimum clickable height */
+  display: flex; /* Use flexbox for inner centering of text */
+  justify-content: center;
+  align-items: center;
+}
+
+.callToAction:hover {
+  background-color: #b7e040;
+  transform: translateY(-2px);
+  color: #023f23; /* Change text color on hover for contrast */
+}
+
+/* Media queries for the button wrapper and the button itself */
+@media (max-width: 768px) {
+  .callToActionWrapper {
+    width: 90%; /* On mobile, wrapper takes 90% width for spacing */
+    margin-left: auto; /* Center the wrapper */
+    margin-right: auto; /* Center the wrapper */
+  }
+
+  .callToAction {
+    width: 100%; /* The button itself takes 100% of the wrapper's width */
+    padding: 12px 25px;
+    font-size: 1em;
+    min-height: 45px;
+  }
+}

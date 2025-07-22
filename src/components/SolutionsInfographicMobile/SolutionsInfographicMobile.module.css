@@ -1,0 +1,192 @@
+/* src/components/SolutionsInfographicMobile/SolutionsInfographicMobile.module.css */
+
+/* -------------------- АНИМАЦИИ -------------------- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* -------------------- MAIN SECTION -------------------- */
+.mobileInfographicSection {
+  background-color: #f7f9fc; /* Или ваш фоновый цвет */
+  padding: 60px 15px; /* Адаптировано для мобильных */
+  text-align: center;
+  overflow: hidden; /* Важно для скрытия содержимого до анимации */
+
+  /* Начальное состояние для анимации появления всей секции */
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Класс, применяемый JavaScript при входе в область видимости */
+.mobileInfographicSection.animatedIn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* -------------------- MAIN TITLE -------------------- */
+.mainTitle {
+  font-size: 2.2em; /* Адаптировано для мобильных */
+  font-weight: 700;
+  color: #0b1a2b;
+  margin-bottom: 30px; /* Адаптировано для мобильных */
+  line-height: 1.2;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+
+  /* Начальное состояние для анимации */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Когда секция анимирована, анимируем заголовок */
+.mobileInfographicSection.animatedIn .mainTitle {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s; /* Задержка для заголовка */
+}
+
+/* -------------------- INFOGRAPHIC CONTAINER (Mobile) -------------------- */
+.mobileInfographicContainer {
+  padding: 0; /* Убираем лишний padding здесь, он уже есть в секции */
+  margin-top: 20px; /* Сохраняем отступ сверху */
+  max-width: 600px; /* Ограничиваем ширину для аккордеона на мобильных */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* -------------------- ACCORDION ITEM -------------------- */
+.accordionItem {
+  border: 1px solid #eee;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Добавляем легкую тень */
+
+  /* Начальное состояние для анимации каждого элемента аккордеона */
+  opacity: 0;
+  transform: translateY(30px); /* Начинаем чуть ниже */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Плавный переход */
+}
+
+/* Когда секция анимирована, анимируем каждый accordionItem */
+.mobileInfographicSection.animatedIn .accordionItem {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: var(--item-delay); /* Используем CSS-переменную для последовательной задержки */
+}
+
+
+.accordionHeader {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #0b1a2b;
+  transition: background-color 0.3s ease;
+}
+
+.accordionHeader:hover,
+.accordionHeader.open {
+  background-color: #e6f7df; /* Светло-зеленый фон */
+}
+
+.headerIconCircle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #023f23; /* Зеленый фон для иконки */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.headerIcon {
+  font-size: 1.5em;
+  color: #ffffff; /* Белая иконка */
+}
+
+.headerName {
+  flex-grow: 1;
+  margin: 0;
+}
+
+.arrow {
+  font-size: 0.8em;
+  color: #a4ce38;
+  transition: transform 0.3s ease;
+}
+
+.accordionHeader.open .arrow {
+  transform: rotate(180deg);
+}
+
+.accordionContent {
+  white-space: pre-line; 
+  font-family: sans-serif;
+  line-height: 1.5;
+  padding: 15px;
+  border-top: 1px solid #eee;
+  color: #34495e;
+  font-size: 0.95em;
+  line-height: 1.5;
+  text-align: start;
+}
+.description{
+    white-space: pre-line; /* Это включает переносы строк из \n */
+  font-family: sans-serif;
+  line-height: 1.5;
+}
+
+/* Дополнительные медиа-запросы, если необходимо тонкая настройка */
+@media (max-width: 480px) {
+  .mobileInfographicSection {
+    padding: 40px 10px;
+  }
+  .mainTitle {
+    font-size: 1.8em;
+  }
+  .accordionHeader {
+    font-size: 1em;
+    padding: 12px;
+  }
+  .headerIconCircle {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+  }
+  .headerIcon {
+    font-size: 1.3em;
+  }
+  .accordionContent {
+    font-size: 0.9em;
+    padding: 12px;
+  }
+}
